@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{% block body %}
+<div class="funBtns">
+    <button onclick="location.href = 'search';">SEARCH</button>
+    <button onclick="location.href = 'delete';">DELETE</button>
+    <button onclick="location.href = 'update';">UPDATE</button>
+</div>
+<div class="searchForm">
+    <form action="/delete" method="POST">
+        <input type="number" name="id" placeholder="ID" required>
+        <input type="submit" value="DELETE" >
+    </form>
+</div>
+{% if msg %}
+<div>
+    <h1>{{msg}}</h1>
+</div>
+{% endif %}
+{% endblock %}

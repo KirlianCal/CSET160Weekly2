@@ -1,8 +1,20 @@
-.mainBtn {
-  margin: auto;
-}
+  .funBtns {
+    margin: auto;
+    display: inline-block
+  }
 
-.barItem{
+  .mainBtn {
+    margin: auto;
+    max-width: 250px;
+    width: 100%;
+    padding: 25px;
+  }
+
+  .searchForm {
+    margin: auto;
+  }
+
+  .barItem{
     display: inline-block;
   }
   

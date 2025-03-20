@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{% block body %}
+<div class="funBtns">
+    <button onclick="location.href = 'search';">SEARCH</button>
+    <button onclick="location.href = 'delete';">DELETE</button>
+    <button onclick="location.href = 'update';">UPDATE</button>
+</div>
+<div class="mainBtn">
+    <form action="/update" method="POST" class = 'funBtns'>
+        <input type="number" name="id" placeholder="ID" required>
+        <input type="text" name="name" placeholder="Boat name" required>
+        <input type="text" name="type" placeholder="Boat type" required>
+        <input type="number" name="owner_id" placeholder="Owner ID" required>
+        <input type="number" name="rental_price" placeholder="Rental price" step="0.01" required>
+        <input type="submit" value="UPDATE" >
+    </form>
+</div>
+{% if msg %}
+<div>
+    <h1>{{msg}}</h1>
+</div>
+{% endif %}
+{% endblock %}

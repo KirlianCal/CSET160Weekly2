@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{% block body %}
+<div class="funBtns">
+    <button onclick="location.href = 'search';">SEARCH</button>
+    <button onclick="location.href = 'delete';">DELETE</button>
+    <button onclick="location.href = 'update';">UPDATE</button>
+</div>
+<div class="searchForm">
+    <form action="/search" method="POST">
+        <input type="number" name="id" placeholder="ID" required>
+        <input type="submit" value="SEARCH" >
+    </form>
+</div>
+{% if result %}
+    {% for boat in result %}
+        <h1>ID: {{ boat.id }}</h1>
+        <h1>Name: {{ boat.name }}</h1>
+        <h1>Type: {{ boat.type }}</h1>
+        <h1>Owner ID: {{ boat.owner_id }}</h1>
+        <h1>Rental Price: {{ boat.rental_price }}</h1>
+    {% endfor %}
+{% else %}
+    <h1>Error: No Boat Found</h1>
+{% endif %}
+{% endblock %}
